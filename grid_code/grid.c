@@ -518,6 +518,7 @@ void GridDraw(grid_t *grid)
 // main
 // -----------------------------------------------------------------------------
 
+#ifndef GRID_NO_MAIN
 int main(void)
 {
     grid_t *grid = CreateGrid(ROWS, COLUMNS);
@@ -545,3 +546,4 @@ int main(void)
 
     return EXIT_SUCCESS;
 }
+#endif

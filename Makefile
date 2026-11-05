@@ -1,6 +1,5 @@
-
 CC = gcc
-CFLAGS = -std=c11 -Wall -Wextra -O2 -I.
+CFLAGS = -std=c11 -Wall -Wextra -O2 -I. -Igrid_code
 LDFLAGS =
 LDLIBS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
@@ -8,8 +7,8 @@ LDLIBS = -lraylib -lGL -lm -lpthread -ldl -lrt -lX11
 
 all: main
 
-main: grid.c grid.h
-	$(CC) $(CFLAGS) $(LDFLAGS) grid.c -o main $(LDLIBS)
+main: grid_code/grid.c grid_code/grid.h
+	$(CC) $(CFLAGS) $(LDFLAGS) grid_code/grid.c -o main $(LDLIBS)
 
 clean:
 	rm -f main
